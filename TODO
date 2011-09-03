@@ -1,0 +1,13 @@
+My exposure to Java tainted me. I need to do a little bit more thinking about
+the relationship between TaskS and ThreadS. My task class is based on being
+notified that the timer has expired and then pushes an privately-defined user
+event onto the queue. I like the benefits of being able to avoid lot of the
+synchronization issues. A Task_thread class could attach itself to the user
+event as a listener and be notified using a Condition...
+
+- Add RAII objects for surface readers/writers/helpers, etc.
+- Use iterator-based interface in get/set_colours (Surface).
+- Disable operator= for wrappers (inherit from class noncopyable).
+- Finer-grained Timer classes.
+- Turn runtime_error into sdl_error;
+- Condition: Turn runtime_error thrown by wait_timeout into a timeout_error.
